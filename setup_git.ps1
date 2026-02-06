@@ -36,8 +36,14 @@ git commit -m "Initial commit: Landing Page AS Software Solutions (Blazor WASM)"
 Write-Host "Repositorio inicializado correctamente." -ForegroundColor Green
 Write-Host "Creado commit a nombre de: nicofloresp2004@gmail.com"
 Write-Host "---------------------------------------------------------"
-Write-Host "PASOS FINALES PARA SUBIR A GITHUB:"
-Write-Host "1. Entra a GitHub y crea un repositorio llamado 'ASLANDING'"
-Write-Host "2. Copia y pega estos comandos:"
-Write-Host "   git remote add origin https://github.com/nicofloresp2004/ASLANDING.git"
-Write-Host "   git push -u origin main"
+Write-Host "PASOS FINALES PARA SUBIR A GITHUB (Automatizados abajo si es posible):"
+Write-Host "1. Se añadirá el remoto: https://github.com/nicofloress/ASLANDING.git"
+Write-Host "2. Se intentará subir el código."
+
+git remote add origin https://github.com/nicofloress/ASLANDING.git
+git branch -M main
+git push -u origin main
+
+Write-Host "---------------------------------------------------------"
+Write-Host "Si el push falló (por autenticación), corre manualmente:"
+Write-Host "git push -u origin main"
