@@ -1,0 +1,19 @@
+<section id="hero" class="hero-section">
+    <div class="container">
+        <h1>AS Software Solutions</h1>
+        <p class="lead">Transformamos ideas en realidad digital.</p>
+        <a href="mailto:ASinformacionclientes@gmail.com" class="btn btn-primary">Contáctanos</a>
+    </div>
+</section>
+
+@inject IJSRuntime JSRuntime
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("initHeroEffect");
+        }
+    }
+}
