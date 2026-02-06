@@ -37,10 +37,14 @@ Write-Host "Repositorio inicializado correctamente." -ForegroundColor Green
 Write-Host "Creado commit a nombre de: nicofloresp2004@gmail.com"
 Write-Host "---------------------------------------------------------"
 Write-Host "PASOS FINALES PARA SUBIR A GITHUB (Automatizados abajo si es posible):"
-Write-Host "1. Se añadirá el remoto: https://github.com/nicofloress/ASLANDING.git"
+Write-Host "1. Se corregirá el remoto a: https://github.com/nicofloress/ASLANDING.git"
 Write-Host "2. Se intentará subir el código."
 
+# Forzar la actualización del remoto (borrar si existe y volver a crear)
+git remote remove origin
+if ($LASTEXITCODE -ne 0) { Write-Host "No existía origin previo, continuando..." }
 git remote add origin https://github.com/nicofloress/ASLANDING.git
+
 git branch -M main
 git push -u origin main
 
