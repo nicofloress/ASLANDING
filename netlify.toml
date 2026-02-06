@@ -6,3 +6,9 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[build.processing]
+  skip_processing = true
+  css.bundle = false
+  js.bundle = false
+  html.pretty_urls = false
