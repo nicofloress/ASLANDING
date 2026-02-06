@@ -36,18 +36,21 @@ git commit -m "Initial commit: Landing Page AS Software Solutions (Blazor WASM)"
 Write-Host "Repositorio inicializado correctamente." -ForegroundColor Green
 Write-Host "Creado commit a nombre de: nicofloresp2004@gmail.com"
 Write-Host "---------------------------------------------------------"
-Write-Host "PASOS FINALES PARA SUBIR A GITHUB (Automatizados abajo si es posible):"
-Write-Host "1. Se corregirá el remoto a: https://github.com/nicofloress/ASLANDING.git"
-Write-Host "2. Se intentará subir el código."
+Write-Host "PASOS FINALES PARA SUBIR A GITHUB:"
 
-# Forzar la actualización del remoto (borrar si existe y volver a crear)
+# Asegurar que estamos en la rama correcta y el remoto es correcto
 git remote remove origin
-if ($LASTEXITCODE -ne 0) { Write-Host "No existía origin previo, continuando..." }
+if ($LASTEXITCODE -ne 0) { Write-Host "Continuando..." }
 git remote add origin https://github.com/nicofloress/ASLANDING.git
+
+# Añadir cambios recientes (Netlify config, etc)
+git add .
+git commit -m "Add Netlify configuration"
 
 git branch -M main
 git push -u origin main
 
 Write-Host "---------------------------------------------------------"
-Write-Host "Si el push falló (por autenticación), corre manualmente:"
-Write-Host "git push -u origin main"
+Write-Host "¡Subido a GitHub!"
+Write-Host "Ahora ve a Netlify.com -> 'Add new site' -> 'Import an existing project' -> Elige GitHub -> Selecciona 'ASLANDING'"
+Write-Host "Netlify detectará automáticamente el archivo netlify.toml y configurará todo."
