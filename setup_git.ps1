@@ -45,7 +45,7 @@ git remote add origin https://github.com/nicofloress/ASLANDING.git
 
 # Añadir cambios recientes (Netlify config, etc)
 git add .
-git commit -m "Fix: Disable Netlify asset processing to prevent Blazor integrity errors"
+git commit -m "UI: Remove Blazor error overlay"
 
 git branch -M main
 git push -u origin main
